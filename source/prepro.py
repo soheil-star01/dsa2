@@ -878,8 +878,6 @@ def pd_col_genetic_transform(df=None, col=None, pars=None):
     else :     ### Training time
         coly     = pars['coly']
         train_y  = df[coly]
-        #### We need two put the two if statement, to compart hall of fame - n_component - population size
-        #### before using below function.
         gp = SymbolicTransformer(hall_of_fame  = train_X.shape[1] + 1,  ### Buggy
                                  n_components  = pars_genetic.get('n_components', train_X.shape[1] ),
                                  feature_names = feature_name_,
